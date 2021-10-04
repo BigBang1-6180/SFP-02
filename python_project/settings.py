@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-ueuj_z6)hy5gqhb$3fmg#5uh%_in@55w3h4lq#kjk3e*^ribea
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sfp02.herokuapp.com']
 
 
 # Application definition
@@ -80,11 +81,11 @@ WSGI_APPLICATION = 'python_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myproject',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'da9vc3ibtkkoue',
+        'USER': 'dfwhufwfovrdne',
+        'PASSWORD': '191fd6d5d921aaf42cdc78c28cb7629d31cf79120b23ed693b81822e02f30d3f',
+        'HOST': 'ec2-44-198-196-149.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
     
 }
@@ -139,3 +140,4 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
+django_heroku.settings(locals)
